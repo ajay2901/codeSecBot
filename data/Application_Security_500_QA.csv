@@ -1,0 +1,41 @@
+Label,Question,Answer
+Application Security,What is Application Security?,"Application Security involves securing applications by finding, fixing, and preventing security vulnerabilities."
+Application Security,Why is Application Security important?,"It protects sensitive data, maintains customer trust, and ensures compliance with regulations."
+Application Security,What is the Secure SDLC?,The Secure SDLC incorporates security practices into each phase of the software development lifecycle.
+Application Security,What is threat modeling?,"Threat modeling identifies potential threats, vulnerabilities, and mitigation strategies during application design."
+Application Security,What is the purpose of a security policy?,A security policy defines the rules and procedures for ensuring the security of applications and data.
+Vulnerabilities,What is a software vulnerability?,A software vulnerability is a weakness or flaw in software that can be exploited by attackers.
+Vulnerabilities,What is Buffer Overflow?,"Buffer Overflow occurs when more data is written to a buffer than it can hold, leading to memory corruption."
+Vulnerabilities,What is Command Injection?,Command Injection exploits vulnerabilities to execute arbitrary system commands on a host server.
+Vulnerabilities,What is Directory Traversal?,Directory Traversal allows attackers to access files and directories outside the intended file structure.
+Vulnerabilities,How can you identify vulnerabilities in an application?,"Use vulnerability scanners, perform code reviews, and conduct penetration testing."
+Secure Code Review,What is Secure Code Review?,Secure Code Review is the process of examining source code to identify security flaws.
+Secure Code Review,What tools are used for Secure Code Review?,"Popular tools include SonarQube, Checkmarx, and Fortify."
+Secure Code Review,What are common issues found in Secure Code Review?,"Common issues include hardcoded credentials, unvalidated input, and insecure APIs."
+Secure Code Review,What is the importance of input validation in secure code?,Input validation prevents malicious data from exploiting application vulnerabilities.
+Secure Code Review,How do you ensure secure logging in code?,Avoid logging sensitive data and use secure logging libraries.
+SAST (Static Application Security Testing),What is SAST?,SAST is a method of analyzing source code or binaries for vulnerabilities without executing the code.
+SAST (Static Application Security Testing),What are the benefits of SAST?,"SAST finds vulnerabilities early in development, reducing remediation costs and improving security."
+SAST (Static Application Security Testing),What are common SAST tools?,"Common tools include SonarQube, Veracode, Checkmarx, and Fortify."
+SAST (Static Application Security Testing),What are limitations of SAST?,SAST may produce false positives and cannot find runtime issues.
+SAST (Static Application Security Testing),How do you prioritize SAST findings?,"Prioritize findings based on risk severity, exploitability, and business impact."
+DAST (Dynamic Application Security Testing),What is DAST?,DAST is a security testing method that analyzes a running application for vulnerabilities.
+DAST (Dynamic Application Security Testing),What are the benefits of DAST?,DAST identifies runtime vulnerabilities such as XSS and SQL Injection.
+DAST (Dynamic Application Security Testing),What are common DAST tools?,"Common tools include Burp Suite, OWASP ZAP, and Acunetix."
+DAST (Dynamic Application Security Testing),What is the difference between DAST and SAST?,"SAST analyzes code statically, while DAST tests the application dynamically during runtime."
+DAST (Dynamic Application Security Testing),What are the challenges in DAST?,Challenges include high false positives and difficulty testing non-public endpoints.
+SCA (Software Composition Analysis),What is SCA?,SCA identifies vulnerabilities in third-party libraries and dependencies used in software.
+SCA (Software Composition Analysis),Why is SCA important?,It helps ensure that third-party components are secure and up-to-date.
+SCA (Software Composition Analysis),What are popular SCA tools?,"Popular tools include Black Duck, Snyk, and Dependency-Check."
+SCA (Software Composition Analysis),What is Dependency Scanning?,Dependency Scanning identifies vulnerabilities in dependencies used in a project.
+SCA (Software Composition Analysis),What is a Bill of Materials (BOM) in SCA?,A BOM is a list of components and dependencies in software to track their security status.
+Penetration Testing,What is Penetration Testing?,Penetration Testing simulates attacks to find security vulnerabilities in systems or applications.
+Penetration Testing,What are the phases of Penetration Testing?,"Phases include reconnaissance, scanning, exploitation, and reporting."
+Penetration Testing,What tools are commonly used for Pen Testing?,"Popular tools include Metasploit, Nmap, and Burp Suite."
+Penetration Testing,What is the difference between Pen Testing and Vulnerability Scanning?,"Pen Testing involves exploitation, while vulnerability scanning identifies weaknesses."
+Penetration Testing,What are common types of Penetration Tests?,"Common types include black-box, white-box, and gray-box testing."
+Secure Coding Practices,What are Secure Coding Practices?,Secure Coding Practices are guidelines for writing code that is resilient to attacks.
+Secure Coding Practices,What is Input Validation?,Input Validation ensures that user input is properly checked before processing.
+Secure Coding Practices,Why is error handling important in secure coding?,Proper error handling prevents leakage of sensitive information to attackers.
+Secure Coding Practices,What is Output Encoding?,Output Encoding ensures data is safely displayed in the browser without execution.
+Secure Coding Practices,How do you handle sensitive data in code?,"Sensitive data should be encrypted, and access should be restricted."

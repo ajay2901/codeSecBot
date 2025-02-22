@@ -1,0 +1,126 @@
+(Due to technical issues, the search service is temporarily unavailable.)
+
+Let’s break down how this code works step by step, using **real-world analogies** to make it easier to understand.
+
+---
+
+### **1. Text Preprocessing (`preprocess.py`)**
+**Purpose**: Clean and standardize text data (like preparing ingredients before cooking).
+
+```python
+class TextPreprocessor:
+    def preprocess(self, text):
+        # 1. Lowercase + Remove Punctuation (e.g., "Hello!" → "hello")
+        # 2. Tokenization (split text into words: "hello world" → ["hello", "world"])
+        # 3. Remove Stopwords (filter out "the", "and", etc.)
+        # 4. Lemmatization (convert "running" → "run", "better" → "good")
+        return processed_tokens
+```
+
+**Analogy**: Imagine you’re sorting a box of Legos:
+1. Remove small useless pieces (punctuation/stopwords)
+2. Group similar pieces by color (lemmatization)
+3. Arrange them neatly for easy use later.
+
+---
+
+### **2. ChatBot Core Logic (`chatbot.py`)**
+**Purpose**: Match user questions to answers using **TF-IDF** and **cosine similarity**.
+
+#### **Phase 1: Training (Preparing Answers)**
+```python
+bot = ChatBot('data/qa_data.csv')  # Initialize
+```
+1. Load Q&A data from CSV (like memorizing a FAQ document).
+2. Preprocess all questions:
+   ```python
+   df['Processed'] = df['Question'].apply(preprocess)
+   ```
+3. Create TF-IDF vectors:
+   - Convert questions into numerical "fingerprints" (e.g., "How do I track?" → `[0.2, 0.7, ...]`).
+
+**TF-IDF Analogy**: Imagine assigning weights to words based on their importance:
+- Common words (e.g., "the") get low weights.
+- Unique words (e.g., "track") get high weights.
+
+---
+
+#### **Phase 2: Responding to a User**
+```python
+response = bot.get_response("How to track my order?")
+```
+1. Preprocess the user’s question (same cleaning steps as training).
+2. Convert it to a TF-IDF vector.
+3. Compare with all stored question vectors using **cosine similarity**:
+   - Finds the most similar question (e.g., "How do I track my order?").
+4. Return its answer if similarity > threshold (confidence check).
+
+**Cosine Similarity Analogy**: Like comparing two recipes by ingredient overlap:
+- 1.0 = Identical recipes
+- 0.0 = Completely different
+
+---
+
+### **3. User Interface (`app.py`)**
+**Purpose**: Provide interaction methods (CLI or web).
+
+#### **CLI Version**
+```python
+You: How do I track my order?
+ChatBot: Use our order tracking portal
+```
+Simple loop that takes input and prints responses.
+
+#### **Web Version (Flask)**
+Creates a web server with two routes:
+1. Homepage (`/`): Renders an HTML form.
+2. `/ask`: Handles form submissions and returns JSON responses.
+
+**Analogy**: Think of the web interface as a restaurant waiter:
+- Takes your order (user input)
+- Brings it to the kitchen (ChatBot logic)
+- Returns your food (response)
+
+---
+
+### **4. Workflow Summary**
+1. **Setup**:
+   ```python
+   bot = ChatBot('data/qa_data.csv')  # Memorize Q&A
+   ```
+2. **User Interaction**:
+   ```
+   User: "How to track order?"
+   → Clean → Vectorize → Compare → Return best answer
+   ```
+3. **Threshold Check**:
+   - If similarity > 0.5 → Return answer
+   - Else → "I’m not sure..."
+
+---
+
+### **Key Libraries Used**
+| Library      | Purpose                                 | Analogy                   |
+|--------------|-----------------------------------------|---------------------------|
+| `nltk`       | Text cleaning/processing                | Kitchen knife for prep    |
+| `scikit-learn` | TF-IDF + cosine similarity            | Recipe comparison tool    |
+| `flask`      | Web interface                           | Restaurant front desk     |
+
+---
+
+### **Example Walkthrough**
+**User Input**: "Where’s your office??"  
+1. Preprocess → `["where", "office"]`
+2. TF-IDF Vector → `[0.3, 0, 0.8, ...]`
+3. Compare with preprocessed questions:
+   - Best match: "Where are you located?" (similarity = 0.85)
+4. Return answer: "We're based in New York"
+
+---
+
+### **Enhancements You Could Add**
+1. **Add Synonyms**: Handle "office" → "location" using WordNet.
+2. **Log Unknown Questions**: Track what the bot can’t answer.
+3. **Use Neural Networks**: Replace TF-IDF with sentence transformers for better accuracy.
+
+Would you like me to dive deeper into any specific part?
