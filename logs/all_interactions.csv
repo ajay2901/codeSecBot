@@ -1,0 +1,8 @@
+timestamp,original_query,processed_query,response,similarity_score
+2025-02-22 19:26:26,SAST,s a s t,SAST is a method of analyzing source code or binaries for vulnerabilities without executing the code.,1.0000
+2025-02-22 19:26:28,DAST,d a s t,DAST is a security testing method that analyzes a running application for vulnerabilities.,1.0000
+2025-02-22 19:26:32,Devsec,d e v s e c,I'm not sure how to help with that. Can you rephrase?,0.0000
+2025-02-22 19:26:34,Sec,s e c,I'm not sure how to help with that. Can you rephrase?,0.0000
+2025-02-22 19:26:37,Security,s e c u r i t y,"Application Security involves securing applications by finding, fixing, and preventing security vulnerabilities.",0.7071
+2025-02-22 19:27:11,securit,s e c u r i t,I'm not sure how to help with that. Can you rephrase?,0.0000
+2025-02-22 19:27:17,secuity,s e c u i t y,I'm not sure how to help with that. Can you rephrase?,0.0000
